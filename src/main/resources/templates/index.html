@@ -22,18 +22,16 @@
   <div class="body-wrapper">
     <!-- partial -->
     <div class="page-wrapper">
+      <div class="update-form">
+        <form class="signin-param" id="signin">
+          <p style="text-align: left;" name="user">User *</p><input id="UserName" type="text" name="user" autocomplete="off" style="text-align: left;" required>
+          <p style="text-align: left;" name="user">Item *</p><input id="ItemName" type="text" name="user" autocomplete="off" style="text-align: left;" required>
+          <br><input id="submit" type="button" onclick="sendRequest(); displayResponse()" value="Update"/>
+        </form>
+      </div>
       <main class="content-wrapper">
-        <div class="hold-form">
-          <form class="signin-param" id="signin">
-            <p style="text-align: left;">User *</p><input id="UserName" type="text" name="user" autocomplete="off" style="text-align: left;" required>
-            <p style="text-align: left;">Item *</p><input id="ItemName" type="text" name="user" autocomplete="off" style="text-align: left;" required>
-            <input id="submit" type="button" onclick="sendRequest(); displayResponse()" value="Update"/>
-          </form>
-        </div>
         <div class="mdc-layout-grid">
           <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
-            </div>
             <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-8">
               <div class="mdc-layout-grid__inner">
                 <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6">
@@ -112,40 +110,34 @@
                 </div>
               </div>
             </div>
-            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4">
-              <div class="mdc-card card--with-avatar">
-                <section class="mdc-card__primary">
-                  <div class="card__avatar"><img src="../static/images/faces/face1.jpg" alt=""></div>
-                  <h1 class="mdc-card__title">Daniel Russel</h1>
-                  <h2 class="mdc-card__subtitle">@danielrussel</h2>
-                  <span class="social__icon-badge mdc-twitter mdi mdi-twitter"></span>
-                </section>
-                <section class="mdc-card__supporting-text pt-1">
-                  <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum sem non mauris euismod hendrerit.Aliquam condimentum sem non mauris euismod hendrerit.</p>
-                  <p class="mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum.</p>
-                </section>
-                <section class="mdc-card__social-footer bg-blue">
-                  <div class="col">
-                    <small>TWEETS</small>
-                    <p>768.8k</p>
-                  </div>
-                  <div class="col">
-                    <small>FOLLOWING</small>
-                    <p>186.8k</p>
-                  </div>
-                  <div class="col">
-                    <small>FOLLOWING</small>
-                    <p>25.8k</p>
-                  </div>
-                </section>
-              </div>
-            </div>
-            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-8">
-              <div class="mdc-card px-2 py-2">
-                <div id="js-legend" class="chartjs-legend mb-2"></div>
-                <canvas id="dashboard-monthly-analytics" height="205"></canvas>
-              </div>
-            </div>
+<!--            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell&#45;&#45;span-4">-->
+<!--              <div class="mdc-card card&#45;&#45;with-avatar">-->
+<!--                <section class="mdc-card__primary">-->
+<!--                  <div class="card__avatar"><img src="../static/images/faces/face1.jpg" alt=""></div>-->
+<!--                  <h1 class="mdc-card__title">Daniel Russel</h1>-->
+<!--                  <h2 class="mdc-card__subtitle">@danielrussel</h2>-->
+<!--                  <span class="social__icon-badge mdc-twitter mdi mdi-twitter"></span>-->
+<!--                </section>-->
+<!--                <section class="mdc-card__supporting-text pt-1">-->
+<!--                  <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum sem non mauris euismod hendrerit.Aliquam condimentum sem non mauris euismod hendrerit.</p>-->
+<!--                  <p class="mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum.</p>-->
+<!--                </section>-->
+<!--                <section class="mdc-card__social-footer bg-blue">-->
+<!--                  <div class="col">-->
+<!--                    <small>TWEETS</small>-->
+<!--                    <p>768.8k</p>-->
+<!--                  </div>-->
+<!--                  <div class="col">-->
+<!--                    <small>FOLLOWING</small>-->
+<!--                    <p>186.8k</p>-->
+<!--                  </div>-->
+<!--                  <div class="col">-->
+<!--                    <small>FOLLOWING</small>-->
+<!--                    <p>25.8k</p>-->
+<!--                  </div>-->
+<!--                </section>-->
+<!--              </div>-->
+<!--            </div>-->
             <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
               <div class="mdc-card table-responsive">
                 <div class="table-heading px-2 px-1 border-bottom">
