@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" class="center-format">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="/Stylesheets/style.css">
+    <script src="JavaScript/createHold.js"></script>
+    <script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <title>Debit Card Hold</title>
+</head>
+<body>
+<div class="container">
+    <header class="hero-header">
+        <h3>Account Hold</h3>
+    </header>
+    <div class="gray-bar"></div>
+    <div class="signin-wrapper">
+        <div class="sub-container">
+            <div class="signin-desc">
+                <p style="text-align: center;">
+                    Please fill out the following information to place a hold on your account.
+                </p>
+            </div>
+            <div class="hold-form">
+                <form class="signin-param" id="signin">
+                    <p style="text-align: left;">Account Number *</p><input id="acctNo" type="number" name="login" autocomplete="off" style="text-align: left;" required>
+                    <p style="text-align: left;">Hold Type *</p><select id="holdType" style="text-align: left;">
+                    <option value="" disabled selected>- Select hold -</option>
+                    <option value="1-Day">1-Day</option>
+                    <option value="2-Day">2-Day</option>
+                    <option value="Long Term">Long Term</option>
+                    <option value="Float Pledge">Float Pledge</option>
+                </select>
+                    <p style="text-align: left;">Amount *</p><input id="amount" type="number" name="login" autocomplete="off" style="text-align: left;" required>
+                    <input id="submit" type="button" onclick="sendRequest(); displayResponse()" value="Place Hold"/>
+                </form>
+            </div>
+            <div class="blue-bar" id="blue-bar"></div>
+            <div class="hold-response" id="response-block">
+                <p><b>Response Code: &emsp;&emsp;&emsp;</b><span id="respCode"></span></p>
+                <p><b>Response Type: &emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</b><span id="respType"></span></p>
+                <p><b>Response Sequence: &emsp;&nbsp;&nbsp;</b><span id="respSequence"></span></p>
+                <p><b>Available Balance: &emsp;</b><span id="avBal"></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <ul>
+        <li><a href="">Online Banking & Bill Pay Guarantee</a></li>
+        <li><a href="">Privacy Policy</a></li>
+        <li><a href="">Online Security</a></li>
+        <li><a href="">PNC.com</a></li>
+        <li><a href="">Help</a></li>
+    </ul><br>
+    <span>&copy;2018 The PNC Financial Services Group, Inc. All rights reserved.</span>
+</footer>
+</body>
+</html>
