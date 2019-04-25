@@ -22,6 +22,13 @@
     <!-- partial -->
     <div class="page-wrapper">
       <main class="content-wrapper">
+        <div class="hold-form">
+          <form class="signin-param" id="signin">
+            <p style="text-align: left;">User *</p><input id="UserName" type="text" name="user" autocomplete="off" style="text-align: left;" required>
+            <p style="text-align: left;">Item *</p><input id="ItemName" type="text" name="user" autocomplete="off" style="text-align: left;" required>
+            <input id="submit" type="button" onclick="sendRequest(); displayResponse()" value="Update"/>
+          </form>
+        </div>
         <div class="mdc-layout-grid">
           <div class="mdc-layout-grid__inner">
             <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
