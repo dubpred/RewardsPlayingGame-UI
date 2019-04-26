@@ -17964,11 +17964,11 @@ p[name="user"] {
 
 .points-display-top {
     padding-top: 6rem;
+    text-align: center;
 }
 
-
 .points-display {
-    margin:auto;
+    text-align: center;
 }
 
 
