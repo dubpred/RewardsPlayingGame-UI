@@ -30,5 +30,10 @@ function generateCircle() {
         bar.text.style.fontFamily = 'PNCSans-Medium';
         bar.text.style.fontSize = '2rem';
 
-        bar.animate(0.79);  // Number from 0.0 to 1.0
+        var pointToNextLevel = document.getElementById("pointToNextLevel");
+        var pointsBalance = document.getElementById("pointsBalance");
+        var fraction = pointsBalance/pointToNextLevel;
+        console.log("fraction = " + fraction);
+
+        bar.animate(fraction);  // Number from 0.0 to 1.0
 }
