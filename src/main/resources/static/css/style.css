@@ -17725,6 +17725,10 @@ address p {
   font-size: 16px;
   font-weight: 600; }
 
+.mdc-card__title--large-name {
+  font-size: 24px;
+  font-weight: 600; }
+
 .social__icon-badge {
   position: absolute;
   right: 15px;
@@ -17936,11 +17940,37 @@ p[name="user"] {
 }
 
 #container {
-  margin: 20px;
-  width: 200px;
-  height: 200px;
+  left: 5.2rem;
+  top: 1rem;
+  width: 180px;
+  height: 180px;
   position: relative;
 }
+
+.points-padding {
+    padding-top: 1rem;
+}
+
+.pointsTitle {
+    padding-top: 6rem;
+    font-family: PNCSans-Regular;
+    font-size: xx-large
+}
+
+.pointsEarned {
+    font-family: PNCSans-Regular;
+    font-size: x-large
+}
+
+.points-display-top {
+    padding-top: 6rem;
+}
+
+
+.points-display {
+    margin:auto;
+}
+
 
 /*-------------------------------------------------------------------*/
 /* === Sample page styles === */
