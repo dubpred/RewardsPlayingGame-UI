@@ -107,13 +107,14 @@
                 <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6">
                     <div>
                     <div class="points-display-top">
-                      <span class="pointsTitle" style="display:none"><b>Tier Level</b></span><br>
+                      <span class="pointsTitle" id="tierTitle" style="display:none"><b>Tier Level</b></span><br>
                         <span class="pointsEarned" id="tier"></span>
                     </div>
                         <br><br>
                     <div class="points-display">
-                      <span class="pointsTitle"style="display:none"><b>Current-Tier Points</b></span><br>
-                        <span class="pointsEarned">395/500 Points</span>
+                      <span class="pointsTitle" id="pointsTitle" style="display:none"><b>Current-Tier Points</b></span><br>
+                        <span class="pointsEarned" id="pointsBalance" style="display:none"></span><span>/</span>
+                      <span class="pointsEarned" id="totalForTier" style="display:none"></span> <span>Points</span>
                     </div>
                     </div>
                 </div>
@@ -215,7 +216,7 @@
             </div>
 
 <!--            <span id="name" style="display:none"></span>-->
-            <span id="pointsBalance" style="display:none"></span>
+<!--            <span id="pointsBalance" style="display:none"></span>-->
 <!--            <span id="tier" style="display:none"></span>-->
             <span id="pointToNextLevel" style="display:none"></span>
             <span id="table" style="display:none"></span>

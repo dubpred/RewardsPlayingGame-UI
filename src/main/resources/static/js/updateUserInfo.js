@@ -1,4 +1,6 @@
 var global;
+var counter = 0;
+var tier;
 
 function sendRequest(){
     var userId = $('#UserId').val();
@@ -31,40 +33,7 @@ $.ajax(settings).done(function (response) {
 global = response;
   console.log(response);
 
-$('#name').text(response.name);
-$('#pointsBalance').text(response.pointsBalance);
-$('#tier').text(response.tier);
-$('#pointToNextLevel').text(response.pointToNextLevel);
-//table needed
-$('#product0').text(response.table[0].product);
-$('#product1').text(response.table[1].product);
-$('#product2').text(response.table[2].product);
-//$('#product3').text(response.table[3].product);
-//$('#product4').text(response.table[4].product);
-$('#transactionCatagory0').text(response.table[0].transactionCatagory);
-$('#transactionCatagory1').text(response.table[1].transactionCatagory);
-$('#transactionCatagory2').text(response.table[2].transactionCatagory);
-//$('#transactionCatagory3').text(response.table[3].transactionCatagory);
-//$('#transactionCatagory4').text(response.table[4].transactionCatagory);
-$('#vendor0').text(response.table[0].vendor);
-$('#vendor1').text(response.table[1].vendor);
-$('#vendor2').text(response.table[2].vendor);
-//$('#vendor3').text(response.table[3].vendor);
-//$('#vendor4').text(response.table[4].vendor);
-$('#transactionAmount0').text(response.table[0].transactionAmount);
-$('#transactionAmount1').text(response.table[1].transactionAmount);
-$('#transactionAmount2').text(response.table[2].transactionAmount);
-//$('#transactionAmount3').text(response.table[3].transactionAmount);
-//$('#transactionAmount4').text(response.table[4].transactionAmount);
-$('#pointAmount0').text(response.table[0].pointAmount);
-$('#pointAmount1').text(response.table[1].pointAmount);
-$('#pointAmount2').text(response.table[2].pointAmount);
-//$('#pointAmount3').text(response.table[3].pointAmount);
-//$('#pointAmount4').text(response.table[4].pointAmount);
-
-
-//displayResponse();
-
+displayResponse();
 generateCircle();
 
 
@@ -74,8 +43,23 @@ generateCircle();
 
 function displayResponse() {
 
-//    var tier = document.getElementById("tier");
-//    tier.style.display="block";
+$('#name').text(global.name);
+$('#tier').text(global.tier);
+$('#pointsBalance').text(global.pointsBalance);
+var totalPoints = global.pointsBalance+global.pointToNextLevel;
+$("#totalForTier").text(totalPoints);
+
+    var tierTitle = document.getElementById("tierTitle");
+    tierTitle.style.display="block";
+
+    var pointsTitle = document.getElementById("pointsTitle");
+    pointsTitle.style.display="block";
+
+    var pointsBalance = document.getElementById("pointsBalance");
+    pointsBalance.style.display="block";
+
+    var totalForTier = document.getElementById("totalForTier");
+    totalForTier.style.display="block";
 
 
 
@@ -90,6 +74,11 @@ function displayResponse() {
 }
 
 function generateCircle() {
+
+    var c = document.getElementById("container");
+    if(c.style.display=="block"){
+        c.style.display="none";
+    }
 
         var bar = new ProgressBar.Circle(container, {
           color: '#000',
@@ -125,10 +114,8 @@ function generateCircle() {
 //        var pointsBalance = document.getElementById("pointsBalance");
 
         var pointToNextLevel = global.pointToNextLevel;
-        console.log("pointToNextLevel = " + pointToNextLevel);
         var pointsBalance = global.pointsBalance;
-        var fraction = pointsBalance/pointToNextLevel;
-        console.log("fraction = " + fraction);
+        var fraction = pointsBalance/(pointsBalance+pointToNextLevel);
 
         bar.animate(fraction);  // Number from 0.0 to 1.0
 
