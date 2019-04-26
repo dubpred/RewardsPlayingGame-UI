@@ -60,6 +60,12 @@ $("#totalForTier").text(totalPoints);
     var totalForTier = document.getElementById("totalForTier");
     totalForTier.style.display="block";
 
+    var slash = document.getElementById("slash");
+    slash.style.display="block";
+
+    var pointsWord = document.getElementById("pointsWord");
+    pointsWord.style.display="block";
+
 
 
 //    var trans_table = document.getElementById("transTable");
