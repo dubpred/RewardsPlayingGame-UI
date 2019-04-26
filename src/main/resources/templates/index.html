@@ -25,9 +25,9 @@
     <div class="page-wrapper">
       <div class="update-form">
         <form class="signin-param" id="signin">
-          <p style="text-align: left;" name="user">User *</p><input id="UserName" type="text" name="user" autocomplete="off" style="text-align: left;" required>
+          <p style="text-align: left;" name="user">User ID *</p><input id="UserName" type="text" name="user" autocomplete="off" style="text-align: left;" required>
           <p style="text-align: left;" name="user">Item *</p><input id="ItemName" type="text" name="user" autocomplete="off" style="text-align: left;" required>
-          <br><input id="submit" type="button" onclick="progressCircle(); " value="Update"/>
+          <br><input id="submit" type="button" onclick="generateCircle(); " value="Update"/>
         </form>
       </div>
       <main class="content-wrapper">
@@ -109,12 +109,12 @@
                 <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6">
                     <div>
                     <div class="points-display-top">
-                        <span class="pointsTitle">Tier Level</span><br>
+                      <span class="pointsTitle"><b>Tier Level</b></span><br>
                         <span class="pointsEarned">2</span>
                     </div>
                         <br><br>
                     <div class="points-display">
-                        <span class="pointsTitle">Current-Tier Points</span><br>
+                      <span class="pointsTitle"><b>Current-Tier Points</b></span><br>
                         <span class="pointsEarned">395/500 Points</span>
                     </div>
                     </div>
@@ -144,7 +144,17 @@
               <div class="mdc-card d-flex flex-column">
                 <div class="mdc-layout-grid__inner flex-grow-1">
                   <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12 d-flex align-item-center flex-column">
-                    <h2 class="mdc-card__title mdc-card__title--large-name text-center mt-2 mb-2" id="circleTitle">Time, Practice</h2>
+                    <h2 class="mdc-card__title mdc-card__title--large-name text-center mt-2 mb-2" id="circleTitle">Rewards Earned</h2>
+                    <div class="rewardItems" id="rewardItem1">
+                      <div class="rewardItem-bottom-space">
+                        <span class="rewardItem" style="display:none">2x points on Food Purchases</span>
+                      </div>
+                    </div>
+                    <div id="rewardItem2">
+                      <div class="rewardItem-bottom-space2">
+                       <span class="rewardItem" style="display:none">1.5x points on Mortgage Payments</span>
+                      </div>
+                    </div>
                   </div>
                   <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-0"></div>
                 </div>
@@ -202,44 +212,7 @@
                   <h1 class="mdc-card__title mdc-card__title--large">Transaction Data</h1>
                 </div>
                   <p id="demo"></p>
-                  <script>
-                    var myObj, i, txt = "";
-                    myObj = [
-                         {
-                         "name":"John",
-                         "age":"30",
-                         "cars":"Ford",
-                         "animal":"dog",
-                         "color":"green"},
-                         {
-                         "name":"Kevin",
-                         "age":"20",
-                         "cars":"Subaru",
-                         "animal":"cat",
-                         "color":"purple"},
-                         {"name":"Mike",
-                         "age":"40",
-                         "cars":"Lexus",
-                         "animal":"bird",
-                         "color":"yellow"}
-                         ];
-
-
-                    txt += "<table><thead><tr><th>Column1</th><th>Column2</th><th>Column3</th><th>Column4</th><th>Column5</th></tr></thead>";
-                    for (i = 0; i < myObj.length; i++) {
-                        txt += "<tr><td>" + myObj[i].name + "</td>";
-                        txt += "<td>" + myObj[i].age + "</td>";
-                        txt += "<td>" + myObj[i].cars + "</td>";
-                        txt += "<td>" + myObj[i].animal + "</td>";
-                        txt += "<td>" + myObj[i].color + "</td></tr>";
-                        }
-                        txt += "</table>";
-                    document.getElementById("demo").innerHTML = txt;
-
-
-
-
-                </script>
+                  <script src="js/table.js"></script>
               </div>
             </div>
           </div>
