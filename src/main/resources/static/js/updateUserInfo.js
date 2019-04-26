@@ -1,7 +1,6 @@
 var global;
 var counter = 0;
 var tier;
-
 function sendRequest(){
     var userId = $('#UserId').val();
 
@@ -35,7 +34,7 @@ global = response;
 
 displayResponse();
 generateCircle();
-
+table();
 
 
 });
