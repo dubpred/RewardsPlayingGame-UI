@@ -3,7 +3,7 @@
 
 <head>
   <script src="js/updateUserInfo.js"></script>
-  <script src="jquery/jquery-3.2.1.min.js"></script>
+  <script src="js/xpCircle.js"></script>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,31 +19,20 @@
   <link rel="shortcut icon" href="../static/images/favicon.png" />
 </head>
 
-<body>
+<body onload="generateCircle()">
   <div class="body-wrapper">
     <!-- partial -->
     <div class="page-wrapper">
+      <div class="update-form">
+        <form class="signin-param" id="signin">
+          <p style="text-align: left;" name="user">User *</p><input id="UserName" type="text" name="user" autocomplete="off" style="text-align: left;" required>
+          <p style="text-align: left;" name="user">Item *</p><input id="ItemName" type="text" name="user" autocomplete="off" style="text-align: left;" required>
+          <br><input id="submit" type="button" onclick="progressCircle(); " value="Update"/>
+        </form>
+      </div>
       <main class="content-wrapper">
-        <div class="hold-form">
-          <form class="signin-param" id="signin">
-            <p style="text-align: left;">User *</p><input id="UserName" type="text" name="user" autocomplete="off" style="text-align: left;" required>
-            <p style="text-align: left;">Item *</p><input id="ItemName" type="text" name="item" autocomplete="off" style="text-align: left;" required>
-            <input id="submit" type="button" onclick="sendRequest(); displayResponse()" value="Update"/>
-          </form>
-        </div>
-
-        <div class="blue-bar" id="blue-bar" style="display:none"></div>
-        <div class="hold-response" id="response-block" style="display:none">
-          <p><b>Response Code: &emsp;&emsp;&emsp;</b><span id="respCode"></span></p>
-          <p><b>Response Type: &emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</b><span id="respType"></span></p>
-          <p><b>Response Sequence: &emsp;&nbsp;&nbsp;</b><span id="respSequence"></span></p>
-          <p><b>Available Balance: &emsp;</b><span id="avBal"></span></p>
-        </div>
-
         <div class="mdc-layout-grid">
           <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
-            </div>
             <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-8">
               <div class="mdc-layout-grid__inner">
                 <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6">
@@ -98,7 +87,9 @@
                   <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3"></div>
                   <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6 d-flex align-item-center flex-column">
                     <h2 class="mdc-card__title mdc-card__title--large text-center mt-2 mb-2">Time, Practice</h2>
-                    <div id="currentBalanceCircle" class="w-100"></div>
+                    <div id="currentBalanceCircle" class="w-100">
+                      <div id="container"></div>
+                    </div>
                   </div>
                   <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3"></div>
                 </div>
@@ -122,46 +113,40 @@
                 </div>
               </div>
             </div>
-            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4">
-              <div class="mdc-card card--with-avatar">
-                <section class="mdc-card__primary">
-                  <div class="card__avatar"><img src="../static/images/faces/face1.jpg" alt=""></div>
-                  <h1 class="mdc-card__title">Daniel Russel</h1>
-                  <h2 class="mdc-card__subtitle">@danielrussel</h2>
-                  <span class="social__icon-badge mdc-twitter mdi mdi-twitter"></span>
-                </section>
-                <section class="mdc-card__supporting-text pt-1">
-                  <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum sem non mauris euismod hendrerit.Aliquam condimentum sem non mauris euismod hendrerit.</p>
-                  <p class="mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum.</p>
-                </section>
-                <section class="mdc-card__social-footer bg-blue">
-                  <div class="col">
-                    <small>TWEETS</small>
-                    <p>768.8k</p>
-                  </div>
-                  <div class="col">
-                    <small>FOLLOWING</small>
-                    <p>186.8k</p>
-                  </div>
-                  <div class="col">
-                    <small>FOLLOWING</small>
-                    <p>25.8k</p>
-                  </div>
-                </section>
-              </div>
-            </div>
-            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-8">
-              <div class="mdc-card px-2 py-2">
-                <div id="js-legend" class="chartjs-legend mb-2"></div>
-                <canvas id="dashboard-monthly-analytics" height="205"></canvas>
-              </div>
-            </div>
+<!--            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell&#45;&#45;span-4">-->
+<!--              <div class="mdc-card card&#45;&#45;with-avatar">-->
+<!--                <section class="mdc-card__primary">-->
+<!--                  <div class="card__avatar"><img src="../static/images/faces/face1.jpg" alt=""></div>-->
+<!--                  <h1 class="mdc-card__title">Daniel Russel</h1>-->
+<!--                  <h2 class="mdc-card__subtitle">@danielrussel</h2>-->
+<!--                  <span class="social__icon-badge mdc-twitter mdi mdi-twitter"></span>-->
+<!--                </section>-->
+<!--                <section class="mdc-card__supporting-text pt-1">-->
+<!--                  <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum sem non mauris euismod hendrerit.Aliquam condimentum sem non mauris euismod hendrerit.</p>-->
+<!--                  <p class="mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum.</p>-->
+<!--                </section>-->
+<!--                <section class="mdc-card__social-footer bg-blue">-->
+<!--                  <div class="col">-->
+<!--                    <small>TWEETS</small>-->
+<!--                    <p>768.8k</p>-->
+<!--                  </div>-->
+<!--                  <div class="col">-->
+<!--                    <small>FOLLOWING</small>-->
+<!--                    <p>186.8k</p>-->
+<!--                  </div>-->
+<!--                  <div class="col">-->
+<!--                    <small>FOLLOWING</small>-->
+<!--                    <p>25.8k</p>-->
+<!--                  </div>-->
+<!--                </section>-->
+<!--              </div>-->
+<!--            </div>-->
             <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
               <div class="mdc-card table-responsive">
                 <div class="table-heading px-2 px-1 border-bottom">
                   <h1 class="mdc-card__title mdc-card__title--large">Employee status</h1>
                 </div>
-                <table class="table" id="transTable" style="display:none">
+                <table class="table">
                   <thead>
                     <tr>
                       <th class="text-left">Product</th>
@@ -242,21 +227,20 @@
     </div>
   </div>
   <!-- body wrapper -->
-
   <!-- plugins:js -->
-  <script src="../static/node_modules/material-components-web/dist/material-components-web.min.js"></script>
-  <script src="../static/node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/material-components-web/dist/material-components-web.min.js"></script>
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page-->
-  <script src="../static/node_modules/chart.js/dist/Chart.min.js"></script>
-  <script src="../static/node_modules/progressbar.js/dist/progressbar.min.js"></script>
+  <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+  <script src="node_modules/progressbar.js/dist/progressbar.min.js"></script>
   <!-- End plugin js for this page-->
   <!-- inject:js -->
-  <script src="../static/js/misc.js"></script>
-  <script src="../static/js/material.js"></script>
+<!--  <script src="../static/js/misc.js"></script>-->
+  <script src="js/material.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
-  <script src="../static/js/dashboard.js"></script>
+<!--  <script src="js/dashboard.js"></script>-->
   <!-- End custom js for this page-->
 </body>
 
