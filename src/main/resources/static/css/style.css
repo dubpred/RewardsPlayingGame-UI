@@ -17066,7 +17066,9 @@ footer {
 
 body {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  background: #f6f6f6
+  }
 
 .body-wrapper {
   display: -webkit-flex;
@@ -17931,6 +17933,13 @@ p[name="user"] {
     position: fixed;
     left: 1rem;
     top: 1rem;
+}
+
+#container {
+  margin: 20px;
+  width: 200px;
+  height: 200px;
+  position: relative;
 }
 
 /*-------------------------------------------------------------------*/
