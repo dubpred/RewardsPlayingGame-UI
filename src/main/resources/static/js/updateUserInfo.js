@@ -66,24 +66,32 @@ $("#totalForTier").text(totalPoints);
     var pointsWord = document.getElementById("pointsWord");
     pointsWord.style.display="block";
 
+    var circleTitle = document.getElementById("circleTitle");
+    circleTitle.style.display="block";
 
+    if(global.tier >= 1){
+        var food = document.getElementById("food");
+        food.style.display="block";
+    }
 
-//    var trans_table = document.getElementById("transTable");
-//    trans_table.style.display='block';
-//
-//    var data_table = document.getElementById("dataTable");
-//    data_table.style.display='block';
+    if(global.tier >= 2){
+        var mortgage = document.getElementById("mortgage");
+        mortgage.style.display="block";
+    }
 
-//generateCircle();
+    if(global.tier >= 3){
+        var allOther = document.getElementById("allOther");
+        allOther.style.display="block";
+    }
 
 }
 
 function generateCircle() {
 
-    var c = document.getElementById("container");
-    if(c.style.display=="block"){
-        c.style.display="none";
-    }
+//    var c = document.getElementById("container");
+//    if(c.style.display=="block"){
+//        c.style.display="none";
+//    }
 
         var bar = new ProgressBar.Circle(container, {
           color: '#000',
@@ -187,15 +195,20 @@ var payload, myObj, myObj2, i, txt = "";
                          ];
 
 
-                    txt += "<table class=\"table\"><thead><tr><th>Product</th><th>Transaction Category</th><th>Vendor</th><th>Transaction Amount</th><th>Point Amount</th></tr></thead><tbody>";
-                    for (i = 0; i < myObj.length; i++) {
-                        txt += "<tr><td class=>" + payload[0].table[i].product + "</td>";
-                        txt += "<td>" + payload[0].table[i].transactionCatagory + "</td>";
-                        txt += "<td>" + payload[0].table[i].vendor + "</td>";
-                        txt += "<td>" + payload[0].table[i].transactionAmount + "</td>";
-                        txt += "<td>" + payload[0].table[i].pointAmount + "</td></tr>";
+                    txt += "<table class=\"table\"><thead><tr><th>Product</th><th>Transaction Category</th><th>Transaction Amount</th><th>Point Amount</th></tr></thead><tbody>";
+                    for (i = 0; i < global.table.length; i++) {
+                        txt += "<tr><td class=>" + global.table[i].product + "</td>";
+                        txt += "<td>" + global.table[i].transactionCatagory + "</td>";
+                        txt += "<td>" + global.table[i].transactionAmount + "</td>";
+                        txt += "<td>" + global.table[i].pointAmount + "</td></tr>";
                         }
                         txt += "</tbody></table>";
                     document.getElementById("demo").innerHTML = txt;
 
+}
+
+function removeElement(elementId) {
+    // Removes an element from the document
+    var element = document.getElementById(elementId);
+    element.parentNode.removeChild(element);
 }

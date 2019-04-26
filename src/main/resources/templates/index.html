@@ -143,15 +143,20 @@
               <div class="mdc-card d-flex flex-column">
                 <div class="mdc-layout-grid__inner flex-grow-1">
                   <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12 d-flex align-item-center flex-column">
-                    <h2 class="mdc-card__title mdc-card__title--large-name text-center mt-2 mb-2" id="circleTitle">Rewards Earned</h2>
+                    <h2 class="mdc-card__title mdc-card__title--large-name text-center mt-2 mb-2" id="circleTitle" style="display:none">Rewards Earned</h2>
                     <div class="rewardItems" id="rewardItem1">
                       <div class="rewardItem-bottom-space">
-                        <span class="rewardItem" style="display:none">2x points on Food Purchases</span>
+                        <span class="rewardItem" id="food" style="display:none">2x points on Food Purchases</span>
                       </div>
                     </div>
                     <div id="rewardItem2">
+                      <div class="rewardItem-bottom-space">
+                       <span class="rewardItem" id="mortgage" style="display:none">2x points on Mortgage Payments</span>
+                      </div>
+                    </div>
+                    <div id="rewardItem3">
                       <div class="rewardItem-bottom-space2">
-                       <span class="rewardItem" style="display:none">1.5x points on Mortgage Payments</span>
+                        <span class="rewardItem" id="allOther" style="display:none">2x points on all Onyx Card purchases</span>
                       </div>
                     </div>
                   </div>
