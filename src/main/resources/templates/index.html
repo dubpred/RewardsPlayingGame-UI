@@ -9,7 +9,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Rewards Playing Game</title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="../static/node_modules/mdi/css/materialdesignicons.min.css">
   <!-- endinject -->
   <!-- plugin css for this page -->
   <!-- End plugin css for this page -->
@@ -19,15 +18,14 @@
   <link rel="shortcut icon" href="../static/images/favicon.png" />
 </head>
 
-<body onload="generateCircle()">
+<body>
   <div class="body-wrapper">
     <!-- partial -->
     <div class="page-wrapper">
       <div class="update-form">
         <form class="signin-param" id="signin">
-          <p style="text-align: left;" name="user">User ID *</p><input id="UserName" type="text" name="user" autocomplete="off" style="text-align: left;" required>
-          <p style="text-align: left;" name="user">Item *</p><input id="ItemName" type="text" name="user" autocomplete="off" style="text-align: left;" required>
-          <br><input id="submit" type="button" onclick="generateCircle(); " value="Update"/>
+          <p style="text-align: left;" name="user">User ID *</p><input id="UserId" type="text" name="user" autocomplete="off" style="text-align: left;" required>
+          <br><input id="submit" type="button" onclick="sendRequest(); generateCircle(); " value="Update"/>
         </form>
       </div>
       <main class="content-wrapper">
@@ -227,7 +225,6 @@
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page-->
-  <script src="node_modules/chart.js/dist/Chart.min.js"></script>
   <script src="node_modules/progressbar.js/dist/progressbar.min.js"></script>
   <!-- End plugin js for this page-->
   <!-- inject:js -->
