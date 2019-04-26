@@ -28,7 +28,7 @@ function generateCircle() {
           }
         });
         bar.text.style.fontFamily = 'PNCSans-Medium';
-        bar.text.style.fontSize = '3.2rem';
+        bar.text.style.fontSize = '2rem';
 
         bar.animate(0.79);  // Number from 0.0 to 1.0
 }
